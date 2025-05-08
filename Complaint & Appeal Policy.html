@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Highway Truck Training</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: white;
+      border-bottom: 1px solid #000000;
+      position: relative;
+      z-index: 1000;
+    }
+
+    .logo img {
+      height: 60px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-item > a {
+      text-decoration: none;
+      color: black;
+      font-weight: 500;
+      padding: 8px;
+    }
+
+    .nav-item .active {
+      color: #fcb900;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 40px;
+      left: 0;
+      background-color: white;
+      border: 1px solid #000000;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 100;
+      width: 150px;
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .dropdown a:hover {
+      background-color: #f4f4f4;
+    }
+
+    .nav-item:hover .dropdown {
+      display: block;
+    }
+
+    .menu-icon {
+      display: none;
+      cursor: pointer;
+      font-size: 28px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: white;
+        border-top: 1px solid #000000;
+        padding: 10px 0;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-item {
+        width: 100%;
+        text-align: center;
+      }
+
+      .nav-item:hover .dropdown {
+        position: static;
+        box-shadow: none;
+        border: none;
+      }
+
+      .dropdown {
+        position: static;
+        border: none;
+        box-shadow: none;
+        display: none;
+        background-color: #f9f9f9;
+      }
+
+      .nav-item.show .dropdown {
+        display: block;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+    }
+
+    .image-section {
+      width: 100%;
+      text-align: center;
+    }
+
+    .image-section img {
+      width: 100%;
+      height: 60vh;
+      max-height: 60vh;
+      min-height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .arrow {
+  
+  transition: transform 0.3s ease;
+}
+
+
+.dropdown {
+  max-height: 0;
+  
+  transition: max-height 0.3s ease;
+}
+
+.nav-item.show .dropdown {
+  display: block;
+  max-height: 500px; /* enough to show all items */
+}
+
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div style="display: flex; align-items: center;">
+      <div class="logo">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEguQzYPH76ZTVqoTI1fscUIcqxIFKnx1rcVZJnkiuKQt2-IxqmGb-WvA1vh9kFIeJGgrW74BsHJOiasu6fqsmUaugViskA8zcdfEoZeTGfOEjOtFedGZfu-nPy5jRtkwpBTH55HLjv1qTGaFhDHcPf4HfHgWDqfiilmExfUfyDesdbS1WICpFZ-8ZbmCX7S/s2000/1000087755.png" alt="Highway Truck Training Logo" style="height: 100px;" />
+      </div>
+      <div style="margin-left: 15px; font-family: Oswald; font-size: 24px; line-height: 1.2;">
+        <div>ZAILDAR</div>
+        <div>TRAINING CENTER</div>
+      </div>
+    </div>
+    
+    <div class="menu-icon" onclick="toggleMenu()"></div>
+    
+  </header>
+
+
+  <!-- Image Section Below Header -->
+  <section class="image-section">
+    <img src="https://www.aussietruckloans.com.au/contentAsset/image/97e42e23-f93c-4ff5-8a9a-ff833913c31b" alt="Truck Training Image" />
+  </section>
+  <script>
+    function toggleMenu() {
+      document.getElementById("navMenu").classList.toggle("active");
+    }
+  
+    function toggleDropdown(event, anchor) {
+      event.preventDefault(); // Prevent link from jumping
+      if (window.innerWidth <= 768) {
+        const navItem = anchor.parentElement;
+        const isOpen = navItem.classList.contains("show");
+  
+        // Close all dropdowns first
+        document.querySelectorAll(".nav-item").forEach(item => {
+          item.classList.remove("show");
+        });
+  
+        // Toggle current
+        if (!isOpen) {
+          navItem.classList.add("show");
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Complaint & Appeal Policy | Zaildar Training Center</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 40px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1, h2, h3 {
+      color: #003366;
+    }
+    ul {
+      margin-top: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 40px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    p {
+      margin: 1em 0;
+    }
+  </style>
+</head>
+<br><br><body>
+  <div class="container">
+    <h1>Complaint & Appeal Policy</h1>
+    <p>Last Updated: 29th April, 2025</p>
+
+    <p>Zaildar Training Center is committed to providing a high standard of education and customer service. We recognize that from time to time, issues may arise that require formal complaint or appeal procedures. This policy outlines how we manage such situations in a fair, transparent, and timely manner.</p>
+
+    <h2>Scope</h2>
+    <p>This policy applies to all students, clients, staff, and stakeholders of Zaildar Training Center who wish to make a complaint or appeal a decision made by the institution.</p>
+
+    <h2>Types of Issues Covered</h2>
+    <ul>
+      <li>Academic complaints (e.g., quality of training, assessment disputes)</li>
+      <li>Non-academic complaints (e.g., conduct of staff, facilities, administrative errors)</li>
+      <li>Appeals regarding assessment results or disciplinary actions</li>
+    </ul>
+
+    <h2>Complaint Procedure</h2>
+    <ol>
+      <li><strong>Informal Resolution:</strong> We encourage resolving complaints informally by discussing the issue with the relevant staff member or trainer.</li>
+      <li><strong>Formal Complaint:</strong> If the issue is not resolved informally, a formal written complaint should be submitted to the administration via email or in person.</li>
+      <li><strong>Acknowledgment:</strong> We will acknowledge receipt of the complaint within 3 business days.</li>
+      <li><strong>Investigation:</strong> An impartial review will be conducted, and a resolution will be offered within 10 business days.</li>
+    </ol>
+
+    <h2>Appeal Procedure</h2>
+    <ol>
+      <li>If you are not satisfied with the outcome of a complaint or assessment, you may lodge a formal appeal within 7 days of the decision.</li>
+      <li>The appeal should clearly state the grounds and include any supporting documentation.</li>
+      <li>An independent review panel will be formed to re-evaluate the decision, and you will be notified of the outcome within 10 business days.</li>
+    </ol>
+
+    <h2>Confidentiality</h2>
+    <p>All complaints and appeals will be handled confidentially. Information will only be shared with those directly involved in the resolution process.</p>
+
+    <h2>Protection Against Retaliation</h2>
+    <p>No person will be penalized for lodging a complaint or appeal in good faith. We are committed to ensuring a safe and supportive environment for all participants.</p>
+
+    <h2>Contact Us</h2>
+    <p>If you have a complaint or wish to file an appeal, please contact us:</p>
+    <p><strong>Zaildar Training Center</strong><br>
+        Email: malwai84@gmail.com <br>
+        Phone: +61 425 078 600</p>
+  </div>
+  <br><br></body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ZAILDAR TRAINING CENTRE</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-message">
+      <p>
+        <strong>ZAILDAR TRAINING CENTRE</strong> acknowledges the Traditional Custodians of the Country on which we live and work.
+        We pay our respects to the culture and Elders past and present.
+      </p>
+    </div>
+  
+    <div class="footer-policies">
+      <a href="https://furniturespot.github.io/Zaildar-Training-Center/Zaildar%20Training%20School/privacypolicy.html">Privacy Policy</a>&nbsp;&nbsp;
+      <a href="https://furniturespot.github.io/Zaildar-Training-Center/Zaildar%20Training%20School/refundpolicy.html">Refund Policy</a>&nbsp;&nbsp;
+      <a href="https://furniturespot.github.io/Zaildar-Training-Center/Zaildar%20Training%20School/Complaint%20&%20Appeal%20Policy.html">Complaint & Appeal Policy</a>
+      
+    </div>
+  
+    <div class="footer-bottom">
+      <div class="footer-left">
+        <span>© ZAILDAR TRAINING CENTRE 2025</span>
+        <a href="#" class="facebook-link"><i class="fab fa-facebook"></i></a>
+      </div>
+      <div class="footer-right">
+       Website Designed by <a href="https://api.whatsapp.com/send/?phone=919907416727&text&type=phone_number&app_absent=0">AYAN DAS</a>
+      </div>
+    </div>
+  </footer>
+
+<style>
+  body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.footer {
+  background-color: #0d0d0d;
+  color: #fff;
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.footer-message {
+  max-width: 1000px;
+  margin: auto;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.6;
+  padding: 0 10px;
+}
+
+.footer-bottom {
+  max-width: 1000px;
+  margin: 20px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  border-top: 1px solid #000000;
+  padding-top: 15px;
+}
+
+.footer-left,
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.facebook-link {
+  font-size: 18px;
+}
+
+@media (max-width: 600px) {
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}
+
+</style>
+</body>
+</html>
+

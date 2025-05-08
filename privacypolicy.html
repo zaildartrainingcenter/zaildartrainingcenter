@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Highway Truck Training</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: white;
+      border-bottom: 1px solid #000000;
+      position: relative;
+      z-index: 1000;
+    }
+
+    .logo img {
+      height: 60px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-item > a {
+      text-decoration: none;
+      color: black;
+      font-weight: 500;
+      padding: 8px;
+    }
+
+    .nav-item .active {
+      color: #fcb900;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 40px;
+      left: 0;
+      background-color: white;
+      border: 1px solid #000000;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 100;
+      width: 150px;
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .dropdown a:hover {
+      background-color: #f4f4f4;
+    }
+
+    .nav-item:hover .dropdown {
+      display: block;
+    }
+
+    .menu-icon {
+      display: none;
+      cursor: pointer;
+      font-size: 28px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: white;
+        border-top: 1px solid #000000;
+        padding: 10px 0;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-item {
+        width: 100%;
+        text-align: center;
+      }
+
+      .nav-item:hover .dropdown {
+        position: static;
+        box-shadow: none;
+        border: none;
+      }
+
+      .dropdown {
+        position: static;
+        border: none;
+        box-shadow: none;
+        display: none;
+        background-color: #f9f9f9;
+      }
+
+      .nav-item.show .dropdown {
+        display: block;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+    }
+
+    .image-section {
+      width: 100%;
+      text-align: center;
+    }
+
+    .image-section img {
+      width: 100%;
+      height: 60vh;
+      max-height: 60vh;
+      min-height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .arrow {
+  
+  transition: transform 0.3s ease;
+}
+
+
+.dropdown {
+  max-height: 0;
+  
+  transition: max-height 0.3s ease;
+}
+
+.nav-item.show .dropdown {
+  display: block;
+  max-height: 500px; /* enough to show all items */
+}
+
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div style="display: flex; align-items: center;">
+      <div class="logo">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEguQzYPH76ZTVqoTI1fscUIcqxIFKnx1rcVZJnkiuKQt2-IxqmGb-WvA1vh9kFIeJGgrW74BsHJOiasu6fqsmUaugViskA8zcdfEoZeTGfOEjOtFedGZfu-nPy5jRtkwpBTH55HLjv1qTGaFhDHcPf4HfHgWDqfiilmExfUfyDesdbS1WICpFZ-8ZbmCX7S/s2000/1000087755.png" alt="Highway Truck Training Logo" style="height: 100px;" />
+      </div>
+      <div style="margin-left: 15px; font-family: Oswald; font-size: 24px; line-height: 1.2;">
+        <div>ZAILDAR</div>
+        <div>TRAINING CENTER</div>
+      </div>
+    </div>
+    
+    <div class="menu-icon" onclick="toggleMenu()"></div>
+    
+  </header>
+
+
+  <!-- Image Section Below Header -->
+  <section class="image-section">
+    <img src="https://www.aussietruckloans.com.au/contentAsset/image/97e42e23-f93c-4ff5-8a9a-ff833913c31b" alt="Truck Training Image" />
+  </section>
+  <script>
+    function toggleMenu() {
+      document.getElementById("navMenu").classList.toggle("active");
+    }
+  
+    function toggleDropdown(event, anchor) {
+      event.preventDefault(); // Prevent link from jumping
+      if (window.innerWidth <= 768) {
+        const navItem = anchor.parentElement;
+        const isOpen = navItem.classList.contains("show");
+  
+        // Close all dropdowns first
+        document.querySelectorAll(".nav-item").forEach(item => {
+          item.classList.remove("show");
+        });
+  
+        // Toggle current
+        if (!isOpen) {
+          navItem.classList.add("show");
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy | Zaildar Training Center</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 40px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1, h2, h3 {
+      color: #003366;
+    }
+    ul {
+      margin-top: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 40px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    p {
+      margin: 1em 0;
+    }
+  </style>
+</head><br><br>
+<body>
+  <div class="container">
+    <h1>Privacy Policy</h1>
+    <p>Last Updated: 29th April, 2025</p>
+
+    <p>Zaildar Training Center ("we," "our," or "us") is committed to protecting and respecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your personal data when you visit our website and engage with our services.</p>
+
+    <h2>Information Collection and Use</h2>
+    <p>We collect certain types of personal data, as described below, when you use our website and services.</p>
+
+    <h3>Types of Data Collected</h3><br>
+    <h4>1. Personal Data:</h4>
+    <ul>
+      <li>Name</li>
+      <li>Email address</li>
+      <li>Phone number</li>
+      <li>Address (optional)</li>
+      <li>Payment information (if applicable)</li>
+    </ul>
+
+    <h4>2. Usage Data:</h4>
+    <ul>
+      <li>Browsing history</li>
+      <li>IP address</li>
+      <li>Type of device used</li>
+      <li>Duration of use and pages visited</li>
+    </ul>
+
+    <h4>3. Tracking & Cookies Data:</h4>
+    <p>We use cookies and other tracking technologies to enhance your experience and analyze how our site is used.</p>
+    <ul>
+      <li><strong>Essential Cookies:</strong> Required for site functionality.</li>
+      <li><strong>Performance Cookies:</strong> Used to analyze site performance.</li>
+    </ul>
+
+    <br><h2>Use of Data</h2>
+    <p>We use the collected data for various purposes:</p>
+    <ul>
+      <li>To provide and maintain our services</li>
+      <li>To notify you about changes to our services</li>
+      <li>To allow you to participate in interactive features</li>
+      <li>To provide customer care and support</li>
+      <li>To monitor usage of the service</li>
+      <li>To detect, prevent, and address technical issues</li>
+    </ul>
+
+    <br><h2>Transfer of Data</h2>
+    <p>Your data may be transferred to and maintained on servers located outside your jurisdiction. By using our services, you consent to the transfer of your data to countries that may not have the same data protection laws.</p>
+
+    <h2>Disclosure of Data</h2><br>
+    <h3>Legal Requirements</h3>
+    <p>We may disclose your personal data in the good faith belief that such action is necessary to:</p>
+    <ul>
+      <li>Comply with a legal obligation</li>
+      <li>Protect and defend our rights or property</li>
+      <li>Prevent or investigate possible wrongdoing</li>
+      <li>Protect the personal safety of users or the public</li>
+      <li>Protect against legal liability</li>
+    </ul>
+
+    <br><h2>Security of Data</h2>
+    <p>We implement appropriate security measures to protect your personal data. However, no method of transmission over the internet is 100% secure, and we cannot guarantee its absolute security.</p>
+
+    <h2>Service Providers</h2>
+    <p>We may employ third-party companies and individuals to facilitate our services or assist in analyzing usage. These providers only access your data to perform tasks on our behalf and are obligated not to disclose or use it for other purposes.</p>
+
+    <h2>Contact Us</h2>
+    <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+    <p><strong>Zaildar Training Center</strong><br>
+    Email: malwai84@gmail.com <br>
+    Phone: +61 425 078 600</p>
+  </div>
+</body>
+<br><br>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ZAILDAR TRAINING CENTRE</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-message">
+      <p>
+        <strong>ZAILDAR TRAINING CENTRE</strong> acknowledges the Traditional Custodians of the Country on which we live and work.
+        We pay our respects to the culture and Elders past and present.
+      </p>
+    </div>
+  
+    <div class="footer-policies">
+      <a href="https://furniturespot.github.io/Zaildar-Training-Center/Zaildar%20Training%20School/privacypolicy.html">Privacy Policy</a>&nbsp;&nbsp;
+      <a href="https://furniturespot.github.io/Zaildar-Training-Center/Zaildar%20Training%20School/refundpolicy.html">Refund Policy</a>&nbsp;&nbsp;
+      <a href="https://furniturespot.github.io/Zaildar-Training-Center/Zaildar%20Training%20School/Complaint%20&%20Appeal%20Policy.html">Complaint & Appeal Policy</a>
+      
+    </div>
+  
+    <div class="footer-bottom">
+      <div class="footer-left">
+        <span>© ZAILDAR TRAINING CENTRE 2025</span>
+        <a href="#" class="facebook-link"><i class="fab fa-facebook"></i></a>
+      </div>
+      <div class="footer-right">
+       Website Designed by <a href="https://api.whatsapp.com/send/?phone=919907416727&text&type=phone_number&app_absent=0">AYAN DAS</a>
+      </div>
+    </div>
+  </footer>
+<style>
+  body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.footer {
+  background-color: #0d0d0d;
+  color: #fff;
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.footer-message {
+  max-width: 1000px;
+  margin: auto;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.6;
+  padding: 0 10px;
+}
+
+.footer-bottom {
+  max-width: 1000px;
+  margin: 20px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  border-top: 1px solid #000000;
+  padding-top: 15px;
+}
+
+.footer-left,
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.facebook-link {
+  font-size: 18px;
+}
+
+@media (max-width: 600px) {
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}
+
+</style>
+</body>
+</html>
+

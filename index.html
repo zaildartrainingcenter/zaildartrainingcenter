@@ -1,0 +1,1621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ZAILDAR TRAINING CENTER</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: white;
+      border-bottom: 1px solid #000000;
+      position: relative;
+      z-index: 1000;
+    }
+
+    .logo img {
+      height: 60px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-item > a {
+      text-decoration: none;
+      color: black;
+      font-weight: 500;
+      padding: 8px;
+    }
+
+    .nav-item .active {
+      color: #fcb900;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 40px;
+      left: 0;
+      background-color: white;
+      border: 1px solid #000000;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 100;
+      width: 150px;
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .dropdown a:hover {
+      background-color: #f4f4f4;
+    }
+
+    .nav-item:hover .dropdown {
+      display: block;
+    }
+
+    .menu-icon {
+      display: none;
+      cursor: pointer;
+      font-size: 28px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: white;
+        border-top: 1px solid #000000;
+        padding: 10px 0;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-item {
+        width: 100%;
+        text-align: center;
+      }
+
+      .nav-item:hover .dropdown {
+        position: static;
+        box-shadow: none;
+        border: none;
+      }
+
+      .dropdown {
+        position: static;
+        border: none;
+        box-shadow: none;
+        display: none;
+        background-color: #f9f9f9;
+      }
+
+      .nav-item.show .dropdown {
+        display: block;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+    }
+
+    .image-section {
+      width: 100%;
+      text-align: center;
+    }
+
+    .image-section img {
+      width: 100%;
+      height: 60vh;
+      max-height: 60vh;
+      min-height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .arrow {
+  
+  transition: transform 0.3s ease;
+}
+
+
+.dropdown {
+  max-height: 0;
+  
+  transition: max-height 0.3s ease;
+}
+
+.nav-item.show .dropdown {
+  display: block;
+  max-height: 500px; /* enough to show all items */
+}
+
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div style="display: flex; align-items: center;">
+      <div class="logo">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEguQzYPH76ZTVqoTI1fscUIcqxIFKnx1rcVZJnkiuKQt2-IxqmGb-WvA1vh9kFIeJGgrW74BsHJOiasu6fqsmUaugViskA8zcdfEoZeTGfOEjOtFedGZfu-nPy5jRtkwpBTH55HLjv1qTGaFhDHcPf4HfHgWDqfiilmExfUfyDesdbS1WICpFZ-8ZbmCX7S/s2000/1000087755.png" alt="Highway Truck Training Logo" style="height: 100px;" />
+      </div>
+      <div style="margin-left: 15px; font-family: Oswald; font-size: 24px; line-height: 1.2;">
+        <div>ZAILDAR</div>
+        <div>TRAINING CENTER</div>
+      </div>
+    </div>
+    
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <nav class="nav-links" id="navMenu">
+      <div class="nav-item"><a href="#">Home</a></div>
+      <div class="nav-item"><a href="#about">About</a></div>
+      
+      <div class="nav-item"><a href="#training">Training</a></div>
+        
+        
+     
+      
+      <div class="nav-item"><a href="#testimonials">Testimonials</a></div>
+      <div class="nav-item"><a href="#contact">Contact</a></div>
+    </nav>
+  </header>
+
+
+  <!-- Image Section Below Header -->
+  <section class="image-section">
+    <img src="https://www.aussietruckloans.com.au/contentAsset/image/97e42e23-f93c-4ff5-8a9a-ff833913c31b" alt="Truck Training Image" />
+  </section>
+  <script>
+    function toggleMenu() {
+      document.getElementById("navMenu").classList.toggle("active");
+    }
+  
+    function toggleDropdown(event, anchor) {
+      event.preventDefault(); // Prevent link from jumping
+      if (window.innerWidth <= 768) {
+        const navItem = anchor.parentElement;
+        const isOpen = navItem.classList.contains("show");
+  
+        // Close all dropdowns first
+        document.querySelectorAll(".nav-item").forEach(item => {
+          item.classList.remove("show");
+        });
+  
+        // Toggle current
+        if (!isOpen) {
+          navItem.classList.add("show");
+        }
+      }
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+<section class="about-section">
+    <h1>ZAILDAR TRAINING CENTRE</h1>
+    <p>
+      <strong>Zaildar Training Centre</strong> is your trusted destination for professional truck driving training. 
+      With a team of certified instructors and a commitment to safety and excellence, we prepare our students 
+      for real-world driving with hands-on experience and thorough guidance. Whether you're aiming for an HR, HC, 
+      or MC licence, we ensure you gain the skills and confidence needed to excel on the road. We take pride in 
+      our high success rate, flexible schedules, and supportive learning environment. Start your journey with 
+      Zaildar Training Centre – where safe drivers are made.
+    </p>
+  </section>
+  
+  <style>
+    .about-section {
+      padding: 40px 20px;
+      text-align: justify;
+    }
+  
+    .about-section h1 {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-align: center;
+   
+    }
+  
+    .about-section p {
+      font-size: 1.3rem;
+      line-height: 1.6;
+      margin: 0 auto;
+      max-width: 100%;
+    }
+  
+    @media (min-width: 768px) {
+      .about-section p {
+        max-width: 1000px;
+      }
+    }
+  
+    @media (min-width: 1024px) {
+      .about-section p {
+        max-width: 900px;
+      }
+    }
+  </style>
+  
+
+
+
+
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Truck Training Programs</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #000;
+    }
+
+    .training-section {
+      max-width: 2200px;
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .training-section h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 40px;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .training-card {
+      background: #fff;
+      border: 5px solid #000000;
+      border-radius: 10px;
+      width: 400px;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+    }
+
+    .training-card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .training-card h2 {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #001c55;
+      padding: 15px 10px 10px;
+    }
+
+    .training-card p {
+      padding: 0 15px 20px;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #444;
+    }
+
+    .training-card button {
+      margin: 0 15px 20px;
+      padding: 12px;
+      font-weight: bold;
+      background-color: #f4c400;
+      color: #000;
+      border: 5px solid;
+      border-radius: 10px;
+      border-color: #000000;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .training-card button:hover {
+      background-color: #e2b100;
+    }
+
+    @media (max-width: 768px) {
+      .card-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .training-card {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="training-section">
+    <h1>We Train People How To Drive Trucks.</h1>
+
+    <div class="card-container">
+      <div class="training-card">
+        <img src="https://www.drivers.com.au/wp-content/uploads/job_images/job_1659520802.jpg" alt="HR Truck" />
+        <h2>TLIC3004 - Drive Heavy Rigid Vehicle</h2>
+        <p>Having an HR License allows the holder to drive a Heavy Rigid Vehicle – more than 8 ton Gross Vehicle Mass (no axle limit) +/- trailer (max 9 ton Gross Vehicle Mass).</p><br><br>
+        <button><div class="nav-item"><a href="#hr">Find More About HR</a></div></button>
+      </div>
+
+      <div class="training-card">
+        <img src="https://a1truckdrivingschool.com.au/wp-content/uploads/2019/02/3.jpg" alt="HC Truck" /><br>
+        <h2>TLIC3005 - Drive Heavy Combination Vehicle</h2>
+        <p>An HC License allows the holder to drive Prime movers with attached single semi-trailer or Heavy Rigid (HR class) vehicles with attached trailer with a Gross Vehicle Mass (GVM) greater than 9,000 kg.</p><br>
+        <button><div class="nav-item"><a href="#hc">Find More About HC</a></div></button>
+      </div>
+
+      <div class="training-card">
+        <img src="https://www.drivers.com.au/wp-content/uploads/job_images/job_1538462909.jpg" alt="MC Truck" /><br>
+        <h2>TLIC4006 - Drive Multi-Combination Vehicle</h2>
+        <p>A Multi Combination (MC) class heavy vehicle licence allows you to drive any heavy combination unit towing 2 or more trailers, each having a gross vehicle mass greater than 9,000 kg</p><br><br>
+        <button><div class="nav-item"><a href="#mc">Find More About MC</a></div></button>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <section style="background-color: #ffcc29; padding: 60px 20px; text-align: center;">
+    <div style="max-width: 1000px; margin: 0 auto;">
+      <h2 style="font-size: 2rem; font-weight: 800; color: #000;">
+        What Are The Benefits And Career Opportunities For<br/>
+        Obtaining A Truck License In Australia?
+      </h2>
+      <p style="margin-top: 20px; font-size: 1.1rem; line-height: 1.8; color: #111; text-align: justify;">
+        After acquiring a truck license in Australia, a range of promising career paths unfolds.
+        Many individuals opt for roles as professional truck drivers, transporting goods for various
+        industries, from retail to construction. Long-haul trucking offers adventurous opportunities,
+        traversing vast distances and exploring the country’s diverse regions. Alternatively, some
+        choose to work as owner-operators, establishing their own trucking businesses and enjoying
+        entrepreneurial independence. Specialized transport niches, such as hazardous materials or
+        oversized loads, become accessible with advanced licenses, opening doors to higher-paying and
+        unique roles. The demand for skilled truck drivers ensures a steady flow of job opportunities
+        across the nation.
+      </p>
+    </div>
+  </section>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+<break>
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HC Truck Licence Training</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    .left, .right {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .left {
+      flex: 2;
+      min-width: 300px;
+    }
+
+    .right {
+      flex: 1;
+      min-width: 260px;
+      background-color: #e0e0e0;
+      text-align: center;
+    }
+
+    .section-title {
+  color: #001b49;
+  border-bottom: 3px solid #f1c40f;
+  padding-bottom: 5px;
+}
+
+
+    .left p {
+      line-height: 1.6;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .buttons a {
+      flex: 1;
+      min-width: 200px;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      padding: 12px;
+      font-weight: bold;
+      border-radius: 6px;
+    }
+
+    .book-btn {
+      background-color: black;
+    }
+
+    .guide-btn {
+      background-color: #2ecc71;
+    }
+
+    .yellow-box {
+      background-color: #f1c40f;
+      padding: 10px;
+      margin: 15px auto;
+      display: inline-block;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    .phone-number {
+      font-size: 1.8em;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .right img {
+      max-width: 120px;
+      margin: auto;
+      display: block;
+    }
+
+    .info-box {
+      background-color: white;
+      padding: 10px;
+      margin: 20px auto;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="training" id="training">
+<div class="heading50">
+ <br><br> <center> <h1>TRUCK DRIVER TRAINING</h1></center><br><br>
+  <style> 
+   .heading50 h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    
+  }</style>
+  </div>
+  <div class="container">
+
+    <!-- Left Side -->
+    <div class="left">
+     
+
+      <section class="hr" id="hr">
+        <h1 class="section-title">HR - AUTOMATIC</h1>
+      
+       
+       <br> <p><strong>1 DAY COURSE:</strong> $1250</p>
+        <p><strong>2 DAY COURSE:</strong> $1400</p>
+      
+        <p><strong>SATURDAY 1 DAY COURSE:</strong> $1500</p>
+        <p><strong>SUNDAY AND PUBLIC HOLIDAYS:</strong> <br>Only by appointment</p><br>
+      
+        <p><strong>SESSION DURATION:</strong></p>
+        <ul>
+          <li>1 DAY COURSE – 4 HOURS</li>
+          <li>2 DAY COURSE – 5 HOURS</li>
+        </ul>
+      <br>
+        <div class="buttons">
+          <a href="#contact" class="book-btn">Book Your HR Automatic Course</a>
+          <a href="https://furniturespot.github.io/Zaildar-Training-Center/Zaildar%20Training%20School/hr.html" class="guide-btn">Download HR Auto Info</a>
+        </div>
+      </div>
+      
+
+    <!-- Right Side -->
+    <div class="right">
+      <img src="https://www.thedrivingschool.com.au/wp-content/uploads/2020/12/HR.png" alt="HC Logo" /><br>
+      <h3>HR - AUTOMATIC TRUCK LICENCE TRAINING</h3>
+      <div class="yellow-box">2 Day (Face-To-Face) Training Available</div>
+
+      <div class="info-box">
+        Heavy Rigid Licence Info Brochure
+      </div>
+
+      <p><strong>Call to Book Now</strong></p>
+      <p class="phone-number">+61 425 078 600</p>
+    </div>
+  </div>
+
+</section>
+
+<br><br><br>
+
+
+
+  <div class="container">
+
+    <!-- Left Side -->
+    <div class="left">
+      <h1 class="section-title">HR - B (Synchromesh)</h1>
+      
+      <br><p><strong>1 Day Course:</strong> $1350</p>
+      <p><strong>2 Day Course:</strong> $1500</p>
+      <p><strong>Saturday 1 Day Course:</strong> $1500</p>
+      <p><strong>Sunday and Public Holidays:</strong><br> <em>Only by Appointment</em></p><br>
+      <p><strong>SESSION DURATION:</strong></p>
+      
+      <ul>
+        <li>1 DAY COURSE – 4 HOURS</li>
+        <li>2 DAY COURSE – 5 HOURS</li>
+      </ul>
+      <br>
+      <div class="buttons">
+        <a href="#contact" class="book-btn">Book Your HR-B Training With Us</a>
+        <a href="https://furniturespot.github.io/Zaildar-Training-Center/Zaildar%20Training%20School/hr.html" class="guide-btn">HR-B Course Guide</a>
+      </div>
+    </div>
+    
+
+    <!-- Right Side -->
+    <div class="right">
+      <img src="https://www.thedrivingschool.com.au/wp-content/uploads/2020/12/HR.png" alt="HC Logo" /><br>
+      <h3>HR - B (Synchromesh) LICENCE TRAINING</h3>
+      <div class="yellow-box">2 Day (Face-To-Face) Training Available</div>
+
+      <div class="info-box">
+        Heavy Rigid - B (Synchromesh) Licence Info Brochure
+      </div>
+
+      <p><strong>Call to Book Now</strong></p>
+      <p class="phone-number">+61 425 078 600</p>
+    </div>
+  </div>
+
+
+
+
+  <br><br><br>
+
+
+
+
+
+  <div class="container">
+
+    <!-- Left Side -->
+    <div class="left">
+    
+      <h1 class="section-title">HR (Road Ranger)</h1>
+      <br>
+      <p><strong>1 Day Course:</strong> $1500</p>
+      <p><strong>2 Day Course:</strong> $1700</p>
+      
+      <p><strong>Saturday 1 Day Course – $1500</strong></p>
+     
+      
+    
+      <p><strong>Sunday and Public Holidays:</strong></p>
+      <ul>
+      Only by appointment
+      </ul>
+      <br>
+      <p><strong>Session Duration:</strong></p>
+      <ul>
+        <li>1 Day Course – 4 Hours</li>
+        <li>2 Day Course – 5 Hours</li>
+      </ul>
+      <br>
+    <div class="buttons">
+      <a href="#contact" class="book-btn">Book Your HR-B Training With Us</a>
+      <a href="https://furniturespot.github.io/Zaildar-Training-Center/Zaildar%20Training%20School/hr.html" class="guide-btn">HR-B Course Guide</a>
+    </div>
+  </div>
+    <!-- Right Side -->
+    <div class="right">
+      <img src="https://www.thedrivingschool.com.au/wp-content/uploads/2020/12/HR.png" alt="HC Logo" /><br>
+      <h3>HR (Road Ranger) LICENCE TRAINING</h3>
+      <div class="yellow-box">2 Day (Face-To-Face) Training Available</div>
+
+      <div class="info-box">
+        Heavy Rigid (Road Ranger) Licence Info Brochure
+      </div>
+
+      <p><strong>Call to Book Now</strong></p>
+      <p class="phone-number">+61 425 078 600</p>
+    </div>
+  </div>
+
+
+
+
+
+
+  <br><br><br>
+
+
+
+
+  <section class="hc" id="hc">
+  <div class="container">
+
+    <!-- Left Side -->
+    <div class="left">
+      <h2 class="subheading">HC AUTOMATIC</h2>
+      <br>
+<div class="hc-auto-details">
+  <p><strong>1 Day Course:</strong> $2000</p>
+  <p><strong>2 Day Course:</strong> $2500</p>
+  <p><strong>Saturday (1 Day Course):</strong> $2500</p>
+  <p><strong>Sunday and Public Holidays</strong><br> <em>Only by Appointment</em></p><br>
+  <p><strong>Session Duration:</strong></p>
+  <ul>
+    <li>1 Day Course – 7 Hours</li>
+    <li>2 Day Course – 8 Hours</li>
+  </ul>
+</div><br>
+<div class="buttons">
+  <a href="#contact" class="book-btn">Book Your HC AUTOMATIC Training With Us</a>
+  <a href="https://furniturespot.github.io/Zaildar-Training-Center/Zaildar%20Training%20School/hc.html" class="guide-btn">HC AUTOMATIC Course Guide</a>
+</div>
+</div>
+    <!-- Right Side -->
+    <div class="right">
+      <img src="https://www.thedrivingschool.com.au/wp-content/uploads/2020/12/HC.png" alt="HC Logo" /><br>
+      <h3>HC AUTOMATIC TRUCK LICENCE TRAINING</h3>
+      <div class="yellow-box">2 Day (Face-To-Face) Training Available</div>
+
+      <div class="info-box">
+        Heavy Combination Automatic Licence Info Brochure
+      </div>
+
+      <p><strong>Call to Book Now</strong></p>
+      <p class="phone-number">+61 425 078 600</p>
+    </div>
+  </div>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+  <section class="mc" id="mc">
+  <div class="container">
+
+    <!-- Left Side -->
+    <div class="left">
+      <h2 class="subheading">MC AUTOMATIC</h2>
+      <br>
+<div class="hc-auto-details">
+  
+  <p><strong>2 Day Course:</strong> $2600</p>
+  <p><strong>Weekend Course :</strong> $3000</p>
+  <p><strong>Sunday and Public Holidays</strong><br> <em>Only by Appointment</em></p><br>
+  <p><strong>Session Duration:</strong></p>
+  <ul>
+   
+    <li>2 Day Course – 11 Hours</li>
+  </ul>
+</div><br>
+<div class="buttons">
+  <a href="#contact" class="book-btn">Book Your MC AUTOMATIC Training With Us</a>
+  <a href="https://furniturespot.github.io/Zaildar-Training-Center/Zaildar%20Training%20School/mc.html" class="guide-btn">MC AUTOMATIC Course Guide</a>
+</div>
+</div>
+
+    
+
+    <!-- Right Side -->
+    <div class="right">
+      <img src="https://www.thedrivingschool.com.au/wp-content/uploads/2020/12/MC.png" alt="HC Logo" /><br>
+      <h3>MC AUTOMATIC TRUCK LICENCE TRAINING</h3>
+      <div class="yellow-box">2 Day (Face-To-Face) Training Available</div>
+
+      <div class="info-box">
+        Multi Combination Licence Info Brochure
+      </div>
+
+      <p><strong>Call to Book Now</strong></p>
+      <p class="phone-number">+61 425 078 600</p>
+    </div>
+  </div>
+
+</section>
+</section>
+
+
+
+
+
+
+
+
+
+<section class="about" id="about">
+  <div class="about-us">
+   <br><br> <h1 class="section-title">About Us</h1>
+   <br><br> <p><strong>Zaildar Training Centre</strong> is a proudly Australian-owned and operated truck driver training school, committed to delivering high-quality education and hands-on experience to aspiring heavy vehicle drivers. Based in Australia, we are passionate about helping our students become confident, skilled, and responsible truck drivers.</p>
+  
+    <p>Zaildar Training Centre is dedicated to excellence in heavy vehicle training. Upon successful completion of any of our programs, students receive a nationally recognised <strong>Statement of Attainment</strong>, ensuring that their qualifications are valid and respected throughout Australia.</p>
+  <br>
+    <h2>Why Choose Zaildar Training Centre ?</h2>
+  
+    <h3>🛻 Experienced & Friendly Instructors</h3>
+    <p>Our team of trainers is fully qualified, experienced, and approved to deliver professional instruction across a wide range of truck licence classes. Our instructors understand that each student learns differently and provide a calm, patient, and supportive environment to help you succeed.</p>
+  
+    <h3>📚 Personalised, One-on-One Training</h3>
+    <p>We pride ourselves on our personalised approach. Each session includes one-on-one instruction, allowing you to build real driving skills and confidence under the guidance of experienced trainers.</p>
+  
+    <h3>🕒 Flexible Training Options</h3>
+    <p>At Zaildar Training Centre, we understand that life can be busy. That’s why we offer flexible lesson schedules to suit your availability. Once you and your instructor are confident in your skills, we’ll assist in arranging your assessment at a convenient time.</p>
+  
+    <h3>🚛 Industry-Relevant, Practical Training</h3>
+    <p>Our training programs are designed to reflect real-world driving scenarios, ensuring you are prepared for what lies beyond the test. We focus on safety, efficiency, and professionalism, so you can hit the road with confidence.</p>
+  <br>
+    <div class="note">
+      <strong>Please Note:</strong> To enrol in any of our training programs, you must be eligible to undertake training and assessment in the required heavy vehicle class. If you’re unsure about your eligibility, please check with the <strong>Department of Transport</strong> or call <strong>131 156</strong> for more information.
+    </div>
+  </div>
+  </section>
+<style>
+  .about-us {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.about-us h1.section-title {
+  color: #001b49;
+  border-bottom: 3px solid #f1c40f;
+  padding-bottom: 5px;
+  text-align: center;
+  font-size: 3.0rem;
+}
+
+.about-us h2 {
+  color: #001b49;
+  margin-top: 30px;
+}
+
+.about-us h3 {
+  margin-top: 20px;
+  color: #2c3e50;
+}
+
+.note {
+  background-color: #fffbe6;
+  border-left: 5px solid #f1c40f;
+  padding: 10px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+</style>  
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zaildar Training Centre - Feedback</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #000;
+    }
+
+    .feedback-section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .feedback-section h1 {
+      color: #001b49;
+      font-size: 28px;
+      margin-bottom: 40px;
+    }
+
+    .testimonial {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: center;
+      margin-bottom: 40px;
+      gap: 30px;
+      max-width: 1500px;
+      margin-left: auto;
+      margin-right: auto;
+      flex-wrap: wrap;
+    }
+
+    .testimonial img {
+      width: 300px;
+      max-width: 100%;
+      border-radius: 5px;
+    }
+
+    .testimonial-text {
+      flex: 1;
+      max-width: 500px;
+      text-align: left;
+    }
+
+    .testimonial-text p {
+      font-size: 20px;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    .testimonial-text strong {
+      display: block;
+      margin-top: 15px;
+      font-size: 25px;
+      color: #001b49;
+    }
+
+    @media (max-width: 768px) {
+      .testimonial {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .testimonial-text {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="testimonials" id="testimonials">
+  <section class="feedback-section">
+   <br><br> <h1>Our Truck Driver Training Feedback</h1><br><br>
+
+    <div class="testimonial">
+      <img src="https://i0.wp.com/zaildardrivertrainingcentre.com.au/wp-content/uploads/2024/10/a-truck-driver-is-driving-a-truck-with-an-orange-vest-free-photo.jpg?resize=768%2C421&ssl=1" alt="Jason Cooper">
+      <div class="testimonial-text">
+        <p>An HC License allows the holder to drive Prime movers with attached single semi-trailer or Heavy Rigid (HR class) vehicles with attached trailer with a Gross Vehicle Mass (GVM) greater than 9,000 kg.</p>
+       
+      </div>
+    </div>
+
+    <div class="testimonial">
+      <img src="https://i0.wp.com/zaildardrivertrainingcentre.com.au/wp-content/uploads/2024/10/professional-femele-truck-driver-cb-talking-picture-id1318295171.webp?resize=768%2C401&ssl=1" alt="Maria">
+      <div class="testimonial-text">
+        <p>A Multi Combination (MC) class heavy vehicle licence allows you to drive any heavy combination unit towing 2 or more trailers, each having a gross vehicle mass greater than 9,000 kg</p>
+        
+      </div>
+    </div>
+
+    <div class="testimonial">
+      <img src="https://i0.wp.com/zaildardrivertrainingcentre.com.au/wp-content/uploads/2024/10/istockphoto-1338247472-612x612-1.jpg?resize=600%2C400&ssl=1" alt="Lachlan Clinch">
+      <div class="testimonial-text">
+        <p>Having an HR License allows the holder to drive a Heavy Rigid Vehicle – more than 8 ton Gross Vehicle Mass (no axle limit) +/- trailer (max 9 ton Gross Vehicle Mass).</p>
+        
+      </div>
+    </div>
+
+
+  </section>
+</section>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ZAILDAR Reviews</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <section class="reviews-section">
+
+    <!-- Company Info Box -->
+    <div class="review-box company-review">
+      <img src="https://yt3.googleusercontent.com/2eI1TjX447QZFDe6R32K0V2mjbVMKT5mIfQR-wK5bAsxttS_7qzUDS1ojoSKeSP0NuWd6sl7qQ=s900-c-k-c0x00ffffff-no-rj" alt="Zaildar Logo" class="company-logo">
+      <h2>ZAILDAR TRAINING CENTRE</h2>
+      <div class="stars">★★★★★</div>
+      <p>22 Google reviews</p>
+      <a href="https://www.google.com/maps/place/ZAILDAR+TRANSPORT+TRAINING+CENTRE/@-32.2338724,115.7450479,12z/data=!4m8!3m7!1s0x4ec3dc434e614b97:0x281ea2d8791a220!8m2!3d-32.2338991!4d115.8274491!9m1!1b1!16s%2Fg%2F11v_8kq_96?entry=ttu&g_ep=EgoyMDI1MDQxNi4xIKXMDSoASAFQAw%3D%3D" class="review-button" target="_blank">
+        Write a review
+      </a>
+    </div>
+
+    <!-- Review 1 -->
+    <div class="review-box review-card">
+      <h4> Ka Dak <img src="https://lh3.googleusercontent.com/a-/ALV-UjWB8TYZ-GCKbyIkZsJ8bOaGOuiubC--D7JxF83ofaD-sn0Sx3k=w36-h36-p-rp-mo-br100" alt="Verified" class="verified"></h4>
+      <div class="date">2024-02-07</div>
+      <div class="stars">★★★★★</div>
+      <p>
+        Sam is very good teacher with lots of patience, kind, understanding and hard working. He has experienced to handle any situation with clam personality. So,  I want to thank him for my class.
+      </p>
+    </div>
+
+    <!-- Review 2 -->
+    <div class="review-box review-card">
+      <h4> Surender Sheokand <img src="https://lh3.googleusercontent.com/a-/ALV-UjV1NRrPdqL6GvHl9HNQzZTpQT6I-z7nbcRPmf9UdXTp1UKK0RK5dw=w36-h36-p-rp-mo-ba4-br100" alt="Verified" class="verified"></h4>
+      <div class="date">2024-02-07</div>
+      <div class="stars">★★★★★</div>
+      <p>
+        Brrilliant trainer, His technique, patience, idea about industry, good teacher, highly recommend his school.
+      </p>
+    </div>
+
+    <!-- Review 3 -->
+    <div class="review-box review-card">
+      <h4> Liam Ziere <img src="https://lh3.googleusercontent.com/a-/ALV-UjVxinsZFJiHPMPW7B_-FnMQ0Zp7R-jwOp0E4Fsvt4MpAu6CN4rn=w36-h36-p-rp-mo-br100" alt="Verified" class="verified"></h4>
+      <div class="date">2024-02-07</div>
+      <div class="stars">★★★★★</div>
+      <p>
+        Very good training, he was clear concise and kind to me. He also puts a-lot of effort into perfecting my driving so I can pass the test.
+      </p>
+    </div>
+
+  </section>
+<br><br><br>
+
+<style>
+ body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  margin: 0;
+  padding: 20px;
+}
+
+.reviews-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.review-box {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.company-review {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.company-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.company-review h2 {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.stars {
+  color: #fbc02d;
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.review-button {
+  background-color: #4285f4;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.review-button:hover {
+  background-color: #3367d6;
+}
+
+.review-card h4 {
+  font-size: 16px;
+  margin: 0 0 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.verified {
+  width: 14px;
+  height: 14px;
+}
+
+.date {
+  font-size: 12px;
+  color: gray;
+  margin-bottom: 5px;
+}
+
+.review-card p {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .reviews-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .review-box {
+    width: 90%;
+  }
+}
+
+
+</style>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Truck Training Banner</title>
+  <style>
+    .banner {
+      background-color: #ffcd1c;
+      color: #1a1a1a;
+      text-align: center;
+      padding: 60px 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    .banner h1 {
+      font-size: 32px;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .banner p {
+      font-size: 16px;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+
+    .banner .book-btn {
+      display: inline-block;
+      background-color: #1a1a1a;
+      color: #ffcd1c;
+      padding: 12px 25px;
+      font-weight: bold;
+      font-size: 16px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .banner .book-btn:hover {
+      background-color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="banner">
+    <h1>ZAILDAR TRAINING CENTER</h1>
+    <p>We provide HR, HC, and MC truck training in the 145 Victoria Rd,<br> Kenwick,</p>
+    <a href="#contact" class="book-btn">Book Now</a>
+  </section>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Truck Driver Training</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff7e6;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 30px 15px;
+    }
+
+    .form-section, .map-section {
+      flex: 1 1 400px;
+      max-width: 600px;
+      padding: 20px;
+    }
+
+    .form-section h1 {
+      font-size: 32px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+
+    .form-section p {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    textarea {
+      resize: vertical;
+      height: 100px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background-color: #000;
+      color: #fff;
+      font-weight: bold;
+      padding: 15px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .submit-btn:hover {
+      background-color: #333;
+    }
+
+    .map-section {
+     
+      padding: 20px;
+    }
+
+    .map-section h3 {
+      color: rgb(0, 0, 0);
+      margin-bottom: 15px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 350px;
+      border: none;
+    }
+
+    @media (max-width: 768px) {
+      .form-section h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="contact" id="contact">
+<div class="container">
+  <div class="form-section">
+    <h1>Book Your Truck Driver<br>Training With Us</h1>
+    <p>Please fill the form, Call or Visit Us</p>
+    <form id="bookingForm">
+      <div class="form-group">
+        <label>Name <span style="color:red">*</span></label>
+        <input type="text" id="name" required>
+      </div>
+      <div class="form-group">
+        <label>Mobile No <span style="color:red">*</span></label>
+        <input type="tel" id="mobile" required>
+      </div>
+      <div class="form-group">
+        <label>Training <span style="color:red">*</span></label>
+        <select id="training" required>
+          <option value="HR">HR</option>
+          <option value="HC">HC</option>
+          <option value="MC">MC</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Email <span style="color:red">*</span></label>
+        <input type="email" id="email" required>
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea id="message" placeholder="Write your message here"></textarea>
+      </div>
+      <button type="button" class="submit-btn" onclick="sendEmail()">SEND MESSAGE</button>
+    </form>
+  </div>
+  
+  <div class="map-section">
+    <br><br><br><br><br><br><br><br><br><br>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3382.7764081913706!2d115.99833917636933!3d-32.02116982574935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2a32bfb1ed0021a1%3A0x206c75e40692a773!2s145%20Victoria%20Rd%2C%20Kenwick%20WA%206107%2C%20Australia!5e0!3m2!1sen!2sin!4v1746022289773!5m2!1sen!2sin" allowfullscreen></iframe>
+  </div>
+</div>
+
+<script>
+  function sendEmail() {
+    const name = document.getElementById("name").value;
+    const mobile = document.getElementById("mobile").value;
+    const training = document.getElementById("training").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    const subject = encodeURIComponent("New Truck Driver Training Booking Request");
+    const body = encodeURIComponent(
+      `Name: ${name}\nMobile No: ${mobile}\nTraining: ${training}\nEmail: ${email}\n\nMessage:\n${message}`
+    );
+
+    const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=malwai84@gmail.com&su=${subject}&body=${body}`;
+
+    window.open(mailtoLink, '_blank');
+  }
+</script>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ZAILDAR TRAINING CENTRE</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Footer Section -->
+  <!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-message">
+    <p>
+      <strong>ZAILDAR TRAINING CENTRE</strong> acknowledges the Traditional Custodians of the Country on which we live and work.
+      We pay our respects to the culture and Elders past and present.
+    </p>
+  </div>
+
+  <div class="footer-policies">
+    <a href="https://furniturespot.github.io/Zaildar-Training-Center/Zaildar%20Training%20School/privacypolicy.html">Privacy Policy</a>
+    <a href="https://furniturespot.github.io/Zaildar-Training-Center/Zaildar%20Training%20School/refundpolicy.html">Refund Policy</a>
+    <a href="https://furniturespot.github.io/Zaildar-Training-Center/Zaildar%20Training%20School/Complaint%20&%20Appeal%20Policy.html">Complaint & Appeal Policy</a>
+    
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-left">
+      <span>© ZAILDAR TRAINING CENTRE 2025</span>
+      <a href="#" class="facebook-link"><i class="fab fa-facebook"></i></a>
+    </div>
+    <div class="footer-right">
+     Website Designed by <a href="https://api.whatsapp.com/send/?phone=919907416727&text&type=phone_number&app_absent=0">AYAN DAS</a>
+    </div>
+  </div>
+</footer>
+
+<style>
+ .footer {
+  background-color: #0d0d0d;
+  color: #fff;
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.footer-message {
+  max-width: 1000px;
+  margin: auto;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.6;
+  padding: 0 10px;
+}
+
+.footer-policies {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.footer-policies a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  max-width: 1000px;
+  margin: 20px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  border-top: 1px solid #000000;
+  padding-top: 15px;
+}
+
+.footer-left,
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.facebook-link {
+  font-size: 18px;
+}
+
+@media (max-width: 600px) {
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .footer-policies {
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 15px;
+  }
+}
+
+</style>
+</body>
+</html>
